@@ -20,3 +20,14 @@ dinner.addEventListener('click', () => {
         dinner.classList.remove('red');
     }
 })
+
+const d = new Date;
+
+setInterval(() => {
+    if(d.getHours() === 23) {
+        breakfast.classList.remove('green');
+        breakfast.classList.add('red');
+        dinner.classList.remove('green');
+        dinner.classList.add('red');
+    }
+}, 2000)
