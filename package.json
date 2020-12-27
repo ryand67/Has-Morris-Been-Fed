@@ -1,0 +1,24 @@
+{
+  "name": "Has-Morris-Been-Fed",
+  "version": "1.0.0",
+  "description": "My cat is getting fat and it's because my roommate and I sometimes feed him double meals",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryand67/Has-Morris-Been-Fed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryand67/Has-Morris-Been-Fed/issues"
+  },
+  "homepage": "https://github.com/ryand67/Has-Morris-Been-Fed#readme"
+}
