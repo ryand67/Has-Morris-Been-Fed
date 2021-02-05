@@ -17,8 +17,8 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Has Morris Been Fed?</title>
+        <link rel="icon" href="/cat-solid.svg" />
       </Head>
 
       <div onClick={handleBreakfast} className={breakfast ? `${styles.green} ${styles.mealDiv}` : `${styles.red} ${styles.mealDiv}`}>
