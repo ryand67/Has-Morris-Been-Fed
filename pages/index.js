@@ -21,6 +21,11 @@ export default function Home() {
     })
   }, [])
 
+  const isToday = (someDate) => {
+    const today = new Date();
+    return someDate.getDate() == today.getDate() && someDate.getMonth() == today.getMonth() && someDate.getFullYear() == today.getFullYear();
+  }
+
   const handleBreakfast = () => {
     setBreakfast(!breakfast);
     axios.post('/api/update?meal=Breakfast')

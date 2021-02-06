@@ -11,7 +11,8 @@ export default async (req, res) => {
     const result = await db.collection('Meals').updateOne({
         meal: req.query.meal
     }, {$set: {
-        fed: !current.fed
+        fed: !current.fed,
+        lastUpdated: new Date()
     }});
 
     res.json(result);
