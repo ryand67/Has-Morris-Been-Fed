@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import { useState } from 'react';
-import styles from '../styles/Home.module.css'
+import { useState, useEffect } from 'react';
+import styles from '../styles/Home.module.css';
+import axios from 'axios';
 
 export default function Home() {
   const [breakfast, setBreakfast] = useState(false);
