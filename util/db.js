@@ -11,4 +11,4 @@ async function connect() {
     return { db, connect };
 }
 
-export default { connect };
+export default connect;
