@@ -7,8 +7,19 @@ export default function Home() {
   const [breakfast, setBreakfast] = useState(false);
   const [dinner, setDinner] = useState(false);
 
+  useEffect(() => {
+    axios.get('/api/read')
+    .then(res => {
+      for(let i = 0; i < res.data.length; i++) {
+        console.log(res.data[i]);
+        
+      }
+    })
+  }, [])
+
   const handleBreakfast = () => {
     setBreakfast(!breakfast);
+    
   }
 
   const handleDinner = () => {
