@@ -23,11 +23,18 @@ export default function Home() {
 
   const handleBreakfast = () => {
     setBreakfast(!breakfast);
-    
+    axios.post('/api/update?meal=Breakfast')
+    .then(res => {
+      console.log(res);
+    })
   }
 
   const handleDinner = () => {
     setDinner(!dinner);
+    axios.post('/api/update?meal=Dinner')
+    .then(res => {
+      console.log(res);
+    })
   }
 
   return (

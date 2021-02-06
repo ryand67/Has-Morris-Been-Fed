@@ -3,9 +3,16 @@ import connect from '../../util/db';
 
 export default async (req, res) => {
     const { db } = await connect();
-    const result = db.collection('Meals').find({
-        meal: "Breakfast"
-    });
-    console.log(result);
+
+    const current = await db.collection('Meals').findOne({
+        meal: req.query.meal
+    })
+    
+    const result = await db.collection('Meals').updateOne({
+        meal: req.query.meal
+    }, {$set: {
+        fed: !current.fed
+    }});
+
     res.json(result);
 }
