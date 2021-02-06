@@ -11,20 +11,26 @@ export default function Home() {
     axios.get('/api/read')
     .then(res => {
       for(let i = 0; i < res.data.length; i++) {
+        const today = new Date().toDateString();
+        const entryDate = new Date(res.data[i].lastUpdated)
+        console.log(entryDate.toDateString());
         //Goes through the array and sets the states.
         if(res.data[i].meal === 'Breakfast') {
-          setBreakfast(res.data[i].fed);
+          if(today !== entryDate) {
+            setBreakfast(false);
+          } else {
+            setBreakfast(res.data[i].fed);
+          }
         } else if(res.data[i].meal === 'Dinner') {
-          setDinner(res.data[i].fed);
+          if(today !== entryDate) {
+            setDinner(false);
+          } else {
+            setDinner(res.data[i].fed);
+          }
         }
       }
     })
   }, [])
-
-  const isToday = (someDate) => {
-    const today = new Date();
-    return someDate.getDate() == today.getDate() && someDate.getMonth() == today.getMonth() && someDate.getFullYear() == today.getFullYear();
-  }
 
   const handleBreakfast = () => {
     setBreakfast(!breakfast);
