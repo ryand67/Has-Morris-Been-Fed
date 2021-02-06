@@ -11,8 +11,12 @@ export default function Home() {
     axios.get('/api/read')
     .then(res => {
       for(let i = 0; i < res.data.length; i++) {
-        console.log(res.data[i]);
-        
+        //Goes through the array and sets the states.
+        if(res.data[i].meal === 'Breakfast') {
+          setBreakfast(res.data[i].fed);
+        } else if(res.data[i].meal === 'Dinner') {
+          setDinner(res.data[i].fed);
+        }
       }
     })
   }, [])
